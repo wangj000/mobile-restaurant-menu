@@ -1,3 +1,25 @@
+body{
+    margin: 0;
+}
+
+.hero{
+    background-image: url('./images/restaurant-proj-banner.jpg');
+    background-size: contain;
+    height: 300px;
+    padding-top: 0px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.hero-text-container{
+    position: absolute;
+    color: white;
+    font-family: 'Smythe', sans-serif;
+    font-size: 50px;
+    margin: 50px auto 50px 100px;
+}
+
+
 .item-section{
     display: flex;
     font-family: 'Smythe', sans-serif;
@@ -28,10 +50,14 @@
     font-size: 25px;
 }
 
-.pizza-plus{
-    margin: 60px 0 30px auto;
-    padding: 10px 30px;
-    border-radius: 60px;
-    border-color: #DEDEDE;
+.plus{
     background: none;
+    margin: auto 10px auto auto;
+    border: 1px solid #DEDEDE;
+    border-radius: 100px;
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    padding: 12px 24px;
 }
+
