@@ -28,6 +28,8 @@
     font-size: 25px;
 }
 
-.add{
-    font-size: 100px;
+.pizza-plus{
+    margin: 30px 0 30px auto;
+    padding: 30px 30px;
+    border-radius: 30px;
 }
