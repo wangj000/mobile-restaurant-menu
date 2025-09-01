@@ -29,7 +29,9 @@
 }
 
 .pizza-plus{
-    margin: 30px 0 30px auto;
-    padding: 30px 30px;
-    border-radius: 30px;
+    margin: 60px 0 30px auto;
+    padding: 10px 30px;
+    border-radius: 60px;
+    border-color: #DEDEDE;
+    background: none;
 }
