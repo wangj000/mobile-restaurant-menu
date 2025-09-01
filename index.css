@@ -102,9 +102,9 @@ body{
     align-items: center;
 }
 
-/* .order p{
+.order p{
     margin: 0px;
-} */
+}
 
 .order-remove{
     margin-left: 20px;
