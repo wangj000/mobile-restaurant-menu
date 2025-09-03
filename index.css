@@ -88,6 +88,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.checkout-section-container{
+  display: off;
+}
+
 .checkout-section{
   display: flex;
   flex-direction: column;
@@ -153,4 +157,67 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
   font-size: 16px;
+}
+
+.card-details-modal{
+  position: fixed;
+  background: #FFFFFF;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 625px;
+  box-shadow: 0px 0px 100px 2px #666;
+  display: none;
+}
+
+.card-details-modal-inner{
+  width: 550px;
+  margin: auto;
+}
+
+.card-details-title-container{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 60px;
+}
+
+.card-details-information-container{
+  display: flex;
+  margin-top: 75px;
+  flex-direction: column;
+}
+
+.card-details-input{
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #757575;
+  border-radius: 3px;
+}
+
+.card-details-input::placeholder{
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.pay-btn{
+  background: #16DB99;
+  padding: 10px;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.pay-btn p{
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+.thank-order{
+  background: #ECFDF5;
+
 }
