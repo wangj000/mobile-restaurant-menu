@@ -89,7 +89,8 @@ body {
 }
 
 .checkout-section-container{
-  display: off;
+  display: flex;
+  flex-direction: column;
 }
 
 .checkout-section{
@@ -157,6 +158,15 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.name-remove-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 150px;
 }
 
 .card-details-modal{
