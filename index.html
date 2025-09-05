@@ -29,73 +29,14 @@
 
       <div class="web-content">
 
-        <div class="item-section">
+        <div id="item-section" class="item-section"></div>
 
-          <div class="item">
-            <p class="item-icon">🍕</p>
-            <div class="item-text">
-              <p class="item-title">Pizza</p>
-              <p class="item-desc">pepperoni, mushroom, mozarella</p>
-              <p class="item-price">$14</p>
-            </div>
-            <button class="plus">+</button>
-          </div>
-
-          <div class="item">
-            <p class="item-icon">🍔</p>
-            <div class="item-text">
-              <p class="item-title">Hamburger</p>
-              <p class="item-desc">beef, cheese, lettuce</p>
-              <p class="item-price">$12</p>
-            </div>
-            <button class="plus">+</button>
-          </div>
-
-          <div class="item">
-            <p class="item-icon">🍺</p>
-            <div class="item-text">
-              <p class="item-title">Beer</p>
-              <p class="item-desc">grain, hops, yeast, water</p>
-              <p class="item-price">$12</p>
-            </div>
-            <button class="plus">+</button>
-          </div>
-
-        </div>
-
-        <div class="checkout-section-container">
+        <div id="checkout-section-container" class="checkout-section-container">
          <div class="checkout-section">
 
           <h1 class="checkout-header">Your order</h1>
 
-          <div class="checkout-items">
-
-            <div class="check-item">
-              <div class="check-name">
-                <p>Pizza</p>
-              </div>
-              <div class="check-remove">
-                <p>remove</p>
-              </div>
-              <div class="check-price">
-                <p>$14</p>
-              </div>
-            </div>
-
-            <div class="check-item">
-              <div class="check-name">
-                <p>Beer</p>
-              </div>
-              <div class="check-remove">
-                <p>remove</p>
-              </div>
-              <div class="check-price">
-                <p>$12</p>
-              </div>
-            </div>
-
-          </div>
-
+          <div id="checkout-items" class="checkout-items"></div>
         </div>
 
         <div class="total-price">
@@ -106,11 +47,11 @@
         <button class="complete-order">Complete order</button>
       </div>
 
-      </div>
-          
-        <div class="thank-order">
+      <div class="thank-order">
           <p>Thanks, [name]! Your order is on its way!</p>
-        </div>
+      </div>
+
+      </div>
 
       <div class="card-details-modal">
         <div class="card-details-modal-inner">
@@ -129,5 +70,6 @@
       </div>
 
     <div class="web-container">
+    <script type="module" src="index.js"></script>
   </body>
 </html>
