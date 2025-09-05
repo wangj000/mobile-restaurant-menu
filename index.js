@@ -8,9 +8,9 @@ const checkoutSectionContainer = document.getElementById(
 let cart = [];
 
 function renderItems() {
-  const pageHTML = menuArray
-    .map(function (item) {
-      return `
+
+  itemSection.innerHTML = menuArray.map((item) =>
+        `
         <div class="item">
             <p class="item-icon">${item.emoji}</p>
             <div class="item-text">
@@ -20,70 +20,61 @@ function renderItems() {
             </div>
             <button data-id="${item.id}" class="plus">+</button>
         </div>
-        `;
-    })
-    .join("");
+        `
+  ).join("")
 
-  itemSection.innerHTML = pageHTML;
 }
 
 renderItems();
 
-//render cart to dom
-function renderCart(){
-
-    if(cart.length === 0){
-        checkoutSectionContainer.style.display = 'none'
-        checkoutSectionContainer.innerHTML = ''
-        return;
+itemSection.addEventListener('click', e =>{
+    let removeBtn = e.target.dataset.id
+    if(!removeBtn){
+      return 
     }
-
-    checkoutSectionContainer.style.display = 'flex'
-
-}
-
-// add item to cart 
-itemSection.addEventListener('click', function(e){
     
-    menuArray.forEach(function(item){
-
-        if(item.id === Number(e.target.dataset.id)){
-            
-            cart.push(item.id)
-
-            checkoutItems.innerHTML += `
-             <div data-id="${item.id}" class="check-item">
-              <div class="check-name">
-                <p>${item.name}</p>
-              </div>
-              <div data-id="${item.id}" class="check-remove">
-                <button class="check-remove">remove</button>
-              </div>
-              <div class="check-price">
-                <p>$${item.price}</p>
-              </div>
-            </div>
-            `
-            cart.push(item)
-        }
-
-    })
-
+    cart.push(Number(removeBtn))
     renderCart()
 
 })
 
-//remove item from order
-// problem: once cart is empty, cart section isn't disppearing
-    // try looking at the gpt response abt event delegation:
-    // https://chatgpt.com/c/68ba0ccd-5994-8331-97d0-50e9cb0c4dc6
+function renderCart(){
+
+    if(cart.length === 0){
+        checkoutSectionContainer.style.display = 'none'
+        return;
+    }
+
+    checkoutSectionContainer.style.display = 'flex'
+    
+    checkoutItems.innerHTML = cart.map(id => {
+
+      let item = menuArray.find(menuItem => id === menuItem.id)
+
+      return `<div data-id="${item.id}" class="check-item">
+          <div class="check-name">
+            <p>${item.name}</p>
+          </div>
+          <div data-id="${item.id}" class="check-remove">
+            <button class="check-remove">remove</button>
+          </div>
+          <div class="check-price">
+            <p>$${item.price}</p>
+          </div>
+        </div>`
+    }).join("")
+
+}
+
 checkoutItems.addEventListener('click', function(e){
 
     const removeBtn = e.target.closest('.check-remove')
 
     const item = removeBtn.closest('.check-item')
 
-    cart = cart.pop(order => order.id != Number(item.dataset.id))
+    let index = cart.indexOf(Number(item.dataset.id))
+    
+    cart.splice(index, 1)
 
     item.remove()
 
