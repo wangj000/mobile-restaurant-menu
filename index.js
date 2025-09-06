@@ -5,8 +5,8 @@ const checkoutItems = document.getElementById("checkout-items");
 const checkoutSectionContainer = document.getElementById(
   "checkout-section-container"
 );
-const completeOrderBtn = document.getElementById('complete-order-btn');
-const cardDetailsModal = document.getElementById('card-details-modal');
+const completeOrderBtn = document.getElementById("complete-order-btn");
+const cardDetailsModal = document.getElementById("card-details-modal");
 let cart = [];
 
 function renderItems() {
@@ -41,7 +41,6 @@ itemSection.addEventListener("click", (e) => {
 });
 
 function renderCart() {
-
   if (cart.length === 0) {
     checkoutSectionContainer.style.display = "none";
     return;
@@ -49,7 +48,8 @@ function renderCart() {
 
   checkoutSectionContainer.style.display = "flex";
 
-  checkoutItems.innerHTML = cart.map((id) => {
+  checkoutItems.innerHTML = cart
+    .map((id) => {
       let item = menuArray.find((menuItem) => id === menuItem.id);
 
       return `<div data-id="${item.id}" class="check-item">
@@ -81,6 +81,6 @@ checkoutItems.addEventListener("click", function (e) {
   renderCart();
 });
 
-completeOrderBtn.addEventListener('click', function(){
-  cardDetailsModal.style.display = 'inline'
-})
+completeOrderBtn.addEventListener("click", function () {
+  cardDetailsModal.style.display = "inline";
+});
