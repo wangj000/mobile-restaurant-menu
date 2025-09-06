@@ -5,11 +5,14 @@ const checkoutItems = document.getElementById("checkout-items");
 const checkoutSectionContainer = document.getElementById(
   "checkout-section-container"
 );
+const completeOrderBtn = document.getElementById('complete-order-btn');
+const cardDetailsModal = document.getElementById('card-details-modal');
 let cart = [];
 
 function renderItems() {
-
-  itemSection.innerHTML = menuArray.map((item) =>
+  itemSection.innerHTML = menuArray
+    .map(
+      (item) =>
         `
         <div class="item">
             <p class="item-icon">${item.emoji}</p>
@@ -21,35 +24,33 @@ function renderItems() {
             <button data-id="${item.id}" class="plus">+</button>
         </div>
         `
-  ).join("")
-
+    )
+    .join("");
 }
 
 renderItems();
 
-itemSection.addEventListener('click', e =>{
-    let removeBtn = e.target.dataset.id
-    if(!removeBtn){
-      return 
-    }
-    
-    cart.push(Number(removeBtn))
-    renderCart()
+itemSection.addEventListener("click", (e) => {
+  let removeBtn = e.target.dataset.id;
+  if (!removeBtn) {
+    return;
+  }
 
-})
+  cart.push(Number(removeBtn));
+  renderCart();
+});
 
-function renderCart(){
+function renderCart() {
 
-    if(cart.length === 0){
-        checkoutSectionContainer.style.display = 'none'
-        return;
-    }
+  if (cart.length === 0) {
+    checkoutSectionContainer.style.display = "none";
+    return;
+  }
 
-    checkoutSectionContainer.style.display = 'flex'
-    
-    checkoutItems.innerHTML = cart.map(id => {
+  checkoutSectionContainer.style.display = "flex";
 
-      let item = menuArray.find(menuItem => id === menuItem.id)
+  checkoutItems.innerHTML = cart.map((id) => {
+      let item = menuArray.find((menuItem) => id === menuItem.id);
 
       return `<div data-id="${item.id}" class="check-item">
           <div class="check-name">
@@ -61,26 +62,25 @@ function renderCart(){
           <div class="check-price">
             <p>$${item.price}</p>
           </div>
-        </div>`
-    }).join("")
-
+        </div>`;
+    })
+    .join("");
 }
 
-checkoutItems.addEventListener('click', function(e){
+checkoutItems.addEventListener("click", function (e) {
+  const removeBtn = e.target.closest(".check-remove");
 
-    const removeBtn = e.target.closest('.check-remove')
+  const item = removeBtn.closest(".check-item");
 
-    const item = removeBtn.closest('.check-item')
+  let index = cart.indexOf(Number(item.dataset.id));
 
-    let index = cart.indexOf(Number(item.dataset.id))
-    
-    cart.splice(index, 1)
+  cart.splice(index, 1);
 
-    item.remove()
+  item.remove();
 
-    renderCart()
-    
+  renderCart();
+});
+
+completeOrderBtn.addEventListener('click', function(){
+  cardDetailsModal.style.display = 'inline'
 })
-
-           
-
