@@ -36,101 +36,103 @@ body {
   font-weight: lighter;
 }
 
-.web-content{
+.web-content {
   display: flex;
   flex-direction: column;
   margin: auto;
   width: 75%;
 }
 
-.item{
+.item {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #D2D2D2;
-  width: 85
+  border-bottom: 2px solid #d2d2d2;
+  width: 85;
 }
 
-.item-icon{
+.item-icon {
   font-size: 78px;
 }
 
-.item-text{
+.item-text {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
 }
 
-.item-title, item-desc, item-price{
-  font-family: 'Smythe', sans-serif;
+.item-title,
+item-desc,
+item-price {
+  font-family: "Smythe", sans-serif;
 }
 
-.item-title{
+.item-title {
   font-size: 28px;
   margin-bottom: 0;
 }
 
-.item-desc{
+.item-desc {
   margin-top: 0;
   padding-top: 10px;
   font-size: 16px;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
 
-.plus{
+.plus {
   margin-left: auto;
   background: none;
   border-radius: 50%;
-  border: 1px solid #DEDEDE;
+  border: 1px solid #dedede;
   width: 60px;
   height: 60px;
   font-size: 32px;
   font-weight: 200;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-.checkout-section-container{
+.checkout-section-container {
   display: none;
   /* display: flex */
   flex-direction: column;
 }
 
-.checkout-section{
+.checkout-section {
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid black;
 }
 
-.checkout-header{
+.checkout-header {
   text-align: center;
-  font-family: 'Smythe', sans-serif;
+  font-family: "Smythe", sans-serif;
   font-weight: 400;
 }
 
-.checkout-items{
+.checkout-items {
   display: flex;
   flex-direction: column;
 }
 
-.check-item{
+.check-item {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.check-item p{
+.check-item p {
   margin: 0px;
 }
 
-.check-name{
+.check-name {
   display: flex;
   font-size: 28px;
-  font-family: 'Smythe', sans-serif;
+  font-family: "Smythe", sans-serif;
 }
 
-.check-remove{
+.check-remove {
   margin-left: 3px;
-  color: #BBBBBB;
+  color: #bbbbbb;
   border: none;
   background: none;
   font-family: inherit;
@@ -138,24 +140,24 @@ body {
   font-size: 16px;
 }
 
-.check-price{
+.check-price {
   margin-left: auto;
-  font-family: 'Smythe', sans-serif;
+  font-family: "Smythe", sans-serif;
   font-size: 20px;
 }
 
-.total-price{
+.total-price {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
 }
 
-.total-price p{
+.total-price p {
   margin: 0;
 }
 
-.complete-order{
-  background: #16DB99;
+.complete-order {
+  background: #16db99;
   padding: 20px 0;
   margin: 30px 0 40px 0;
   border-radius: 5px;
@@ -168,32 +170,34 @@ body {
   justify-content: center;
 }
 
-.name-remove-btn{
+.name-remove-btn {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 150px;
 }
 
-.card-details-modal{
+.card-details-modal {
   position: fixed;
-  background: #FFFFFF;
+  background: #ffffff;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
   height: 625px;
   box-shadow: 0px 0px 100px 2px #666;
-  display: none; 
+  display: none;
   /* display: inline */
 }
 
-.card-details-modal-inner{
+.card-details-modal-inner {
   width: 550px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.card-details-title-container{
+.card-details-title-container {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
@@ -201,32 +205,32 @@ body {
   margin-top: 60px;
 }
 
-.card-details-information-container{
+.card-details-information-container {
   display: flex;
-  margin-top: 75px;
+  margin-top: 50px;
   flex-direction: column;
 }
 
-.card-details-input{
+.card-details-input {
   padding: 30px;
   margin-bottom: 20px;
   border: 1px solid #757575;
   border-radius: 3px;
 }
 
-.card-details-input::placeholder{
+.card-details-input::placeholder {
   font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.pay-btn{
-  background: #16DB99;
+.pay-btn {
+  background: #16db99;
+  border: none;
   padding: 10px;
-  margin-top: 40px;
   border-radius: 5px;
 }
 
-.pay-btn p{
+.pay-btn p {
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
@@ -234,17 +238,18 @@ body {
   text-align: center;
 }
 
-.thank-order{
+.thank-order {
   display: none;
   /* display: block */
-  background: #ECFDF5;
+  background: #ecfdf5;
   margin-top: 40px;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
-.thank-order p{
-  font-family: 'Smythe', sans-serif;
-  color: #065F46;
+.thank-order p {
+  font-family: "Smythe", sans-serif;
+  color: #065f46;
   font-weight: 400;
   font-size: 32px;
   text-align: center;

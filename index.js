@@ -7,6 +7,11 @@ const checkoutSectionContainer = document.getElementById(
 );
 const completeOrderBtn = document.getElementById("complete-order-btn");
 const cardDetailsModal = document.getElementById("card-details-modal");
+const payBtn = document.getElementById("pay-btn");
+const thankOrder = document.getElementById("thank-order");
+const cardDetailsForm = document.getElementById(
+  "card-details-information-container"
+);
 let cart = [];
 
 function renderItems() {
@@ -83,4 +88,16 @@ checkoutItems.addEventListener("click", function (e) {
 
 completeOrderBtn.addEventListener("click", function () {
   cardDetailsModal.style.display = "inline";
+});
+
+payBtn.addEventListener("click", function () {
+  cardDetailsModal.style.display = "none";
+  thankOrder.style.display = "block";
+  checkoutSectionContainer.style.display = "none";
+
+  const cardFormInfo = new FormData(cardDetailsForm);
+
+  thankOrder.innerHTML = `
+  <p>Thanks, ${cardFormInfo.get("name")}! Your order is on its way!</p>
+  `;
 });
